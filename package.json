@@ -1,13 +1,12 @@
 {
-	"name": "micron",
-	"private": true,
+	"name": "microner",
 	"description": "Utility for creating microservices on node.js",
 	"version": "0.0.2",
 	"author": "Mikhail Kudryashev <uamedwed@gmail.com> (https://uamedwed.com)",
 	"main": "dist/main.js",
-	"homepage": "https://github.com/uamedwed/micron",
-	"bugs": "https://github.com/uamedwed/micron/issues",
-	"repository": "git::uamedwed/micron.git",
+	"homepage": "https://github.com/uamedwed/microner",
+	"bugs": "https://github.com/uamedwed/microner/issues",
+	"repository": "git::uamedwed/microner.git",
 	"scripts": {
 		"start": "npm run build && NODE_ENV=prod node dist/index.jss",
 		"dev": "nodemon --exec \"npm run build && NODE_ENV=dev babel-node src/main.js\"",
