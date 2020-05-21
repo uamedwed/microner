@@ -2,6 +2,9 @@
 Utility for creating microservices on node.js
 
 ## Change Log
+### [0.0.2] - 2020-00-00
+### Added
+- Added options to database schema
 ### [0.0.2] - 2020-05-20
 ### Changed
 - Changed app name

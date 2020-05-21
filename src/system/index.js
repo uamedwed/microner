@@ -9,17 +9,22 @@ export class System {
 		}
 	}
 
-	createTable(name, structure, indexes) {
-		return this.db.createTable(name, structure, indexes)
+	createTable(name, structure, indexes, options) {
+		return this.db.createTable(name, structure, indexes, options)
 	}
 
 	createApi(name, model) {
 		return this.api.createApi(name, model)
 	}
 
-	generateService(name, dbStructure, dbIndexes) {
+	generateService(name, dbStructure, dbIndexes, dbOptions) {
 		const _name = name
-		const _model = this.createTable(_name, { ...dbStructure }, dbIndexes)
+		const _model = this.createTable(
+			_name,
+			{ ...dbStructure },
+			dbIndexes,
+			dbOptions
+		)
 		const _api = this.createApi(_name, _model)
 		return {
 			model: _model,

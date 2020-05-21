@@ -52,23 +52,21 @@ export class Database {
 		}
 	}
 
-	schema(structure) {
+	schema(structure, options) {
 		if (this.driver === 'mongodb') {
-			const Schema = new mongoose.Schema(structure)
-			return Schema
+			return new mongoose.Schema(structure, { ...options })
 		}
 	}
 
-	createTable(name, structure, indexes) {
-		name = name.toLowerCase()
+	createTable(name, structure, indexes, options = {}) {
 		if (this.driver === 'mongodb') {
-			const schema = this.schema(structure)
+			const schema = this.schema(structure, options)
 			if (indexes && indexes.length > 0) {
 				indexes.forEach(indexItem => {
 					schema.index(indexItem)
 				})
 			}
-			return new MongoDb(mongoose.model(name, schema))
+			return new MongoDb(mongoose.model(name, schema, name))
 		}
 	}
 }
