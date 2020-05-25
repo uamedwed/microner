@@ -28,6 +28,6 @@ export class Controllers {
 	}
 
 	removeById(_id) {
-		return this.model.delete(_id)
+		return this.model.deleteOne(_id)
 	}
 }

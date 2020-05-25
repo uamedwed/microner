@@ -57,9 +57,21 @@ export class MongoDb {
 		})
 	}
 
-	delete(_id) {
+	deleteOne(_id) {
 		return new Promise((resolve, reject) => {
 			this.model.deleteOne({ _id }, err => {
+				if (err) {
+					reject(err)
+				} else {
+					resolve(true)
+				}
+			})
+		})
+	}
+
+	deleteMany(query) {
+		return new Promise((resolve, reject) => {
+			this.model.deleteMany(query, err => {
 				if (err) {
 					reject(err)
 				} else {
