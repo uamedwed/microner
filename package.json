@@ -9,8 +9,8 @@
 	"repository": "git::uamedwed/microner.git",
 	"scripts": {
 		"start": "npm run build && NODE_ENV=prod node dist/index.jss",
-		"dev": "nodemon --exec \"npm run build && NODE_ENV=dev babel-node src/main.js\"",
-		"build": "rm -rf dist && babel ./src/ -d ./dist/",
+		"dev": "nodemon --exec \"npm run build && NODE_ENV=dev babel-node lib/main.js\"",
+		"build": "rm -rf dist && babel ./lib/ -d ./dist/",
 		"test": "nodemon --exec \"npm run build && NODE_ENV=test mocha --timeout 10000 -s 0\""
 	},
 	"devDependencies": {
